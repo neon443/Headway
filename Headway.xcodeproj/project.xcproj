@@ -12,18 +12,32 @@
   },
   "files": [
     {
-      "kind": "folder",
+      "kind": "group",
       "path": "Headway",
-      "target-membership": [
-        "Headway",
-      ],
-      "membership-exceptions": [
+      "children": [
+        { "path": "AppDelegate.h" },
+        { "path": "AppDelegate.m", "target-membership": [ "Headway/compile-sources" ] },
+        { "path": "Assets.xcassets", "target-membership": [ "Headway/resources" ] },
+        { "path": "Document.h" },
+        { "path": "Document.m", "target-membership": [ "Headway/compile-sources" ] },
+        { "path": "Info.plist" },
+        { "path": "main.m", "target-membership": [ "Headway/compile-sources" ] },
         {
-          "target": "Headway",
-          "exclusions": [
-            "Info.plist",
+          "kind": "variant-group",
+          "name": "Main.storyboard",
+          "target-membership": [
+            "Headway/resources",
+          ],
+          "children": [
+            {
+              "path": "Base.lproj/Main.storyboard",
+            },
           ],
         },
+        { "path": "ViewController.h" },
+        { "path": "ViewController.m", "target-membership": [ "Headway/compile-sources" ] },
+        { "path": "FrameworkCollection.h" },
+        { "path": "FrameworkCollection.m", "target-membership": [ "Headway/compile-sources" ] },
       ],
     }, {
       "kind": "group",
@@ -50,6 +64,7 @@
         "CODE_SIGN_STYLE": "Automatic",
         "COMBINE_HIDPI_IMAGES": "YES",
         "CURRENT_PROJECT_VERSION": "1",
+        "DEVELOPMENT_TEAM": "4UMKR5C7LL",
         "ENABLE_APP_SANDBOX": "YES",
         "ENABLE_USER_SELECTED_FILES": "readwrite",
         "GENERATE_INFOPLIST_FILE": "YES",
